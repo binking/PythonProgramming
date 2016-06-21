@@ -1,0 +1,341 @@
+Top ten hashtags: Total tags : 1623
+MTVHottest 189
+TeenChoiceAwards 55
+MPN 52
+MTVSummerStar 31
+ESCREVEAI 29
+myfavoritevlog 17
+CABELOSDEALGODÃO 15
+PSYKontra 14
+DragMeDownDay 14
+トレクル 8
+
+Sort dict by values:
+Method1 : top_10_tags = sorted(pairs, key=lambda key:pairs[key], reverse=True)[:10] # Get keys
+	  return {k:pairs[k] for k in top_10_tags}
+Method2 : top_10_tags = sorted(pairs.items(), key=lambda x:x[1], reverse=True)[:10]
+Method3 : top_10_tags = sorted(pairs.iteritems(), key=operator.itemgetter(1), reverse=True)[:10]
+
+Exploring Tweets data:
+Get entity : tweet['entities'] -- a dict : {'hashtags': [], 'symbols': [], 'trends': [], 'urls': [], 'user_mentions': []}
+Get hashtags: tweet['entities']['hashtags'] -- list of dictionary of {'indices' : [num1, num2], 'text': 'XXXX'}
+Get tweet content : 
+Get user field :  tweet['user']
+{'contributors_enabled': False,
+ 'created_at': 'Tue Mar 26 23:22:14 +0000 2013',
+ 'default_profile': False,
+ 'default_profile_image': False,
+ 'description': 'عشت مدلُلُةّ ۆلاأشبہ أحٍد فقط لاأنني أبْنْتٌہ ربط إسمي ب #شخصيه_دبلوماسية..........وينِ بكون أنا بًأحًلَآمًکْ طبعآツ',
+ 'favourites_count': 14468,
+ 'follow_request_sent': None,
+ 'followers_count': 18816,
+ 'following': None,
+ 'friends_count': 7559,
+ 'geo_enabled': False,
+ 'id': 1305908600,
+ 'id_str': '1305908600',
+ 'is_translator': False,
+ 'lang': 'ar',
+ 'listed_count': 25,
+ 'location': '',
+ 'name': 'شخصيه دبلوِماسيّة.!ّ',
+ 'notifications': None,
+ 'profile_background_color': 'C0DEED',
+ 'profile_background_image_url': 'http://abs.twimg.com/images/themes/theme1/bg.png',
+ 'profile_background_image_url_https': 'https://abs.twimg.com/images/themes/theme1/bg.png',
+ 'profile_background_tile': True,
+ 'profile_banner_url': 'https://pbs.twimg.com/profile_banners/1305908600/1433459409',
+ 'profile_image_url': 'http://pbs.twimg.com/profile_images/615338552402948097/k0eOXDro_normal.jpg',
+ 'profile_image_url_https': 'https://pbs.twimg.com/profile_images/615338552402948097/k0eOXDro_normal.jpg',
+ 'profile_link_color': '0084B4',
+ 'profile_sidebar_border_color': 'FFFFFF',
+ 'profile_sidebar_fill_color': 'DDEEF6',
+ 'profile_text_color': '333333',
+ 'profile_use_background_image': True,
+ 'protected': False,
+ 'screen_name': 'snoow3333',
+ 'statuses_count': 133539,
+ 'time_zone': 'Nairobi',
+ 'url': None,
+ 'utc_offset': 10800,
+ 'verified': False}
+Get tweet's all attributes:
+favorite_count 0
+in_reply_to_status_id None
+lang ar
+in_reply_to_user_id_str None
+in_reply_to_status_id_str None
+timestamp_ms 1439761273661
+favorited False
+filter_level low
+possibly_sensitive False
+source <a href="http://twitter.com/download/iphone" rel="nofollow">Twitter for iPhone</a>
+truncated False
+geo None
+coordinates None
+in_reply_to_user_id None
+text ايه الأكل 😜
+retweeted False
+in_reply_to_screen_name None
+id_str 633030779619012608
+created_at Sun Aug 16 21:41:13 +0000 2015
+entities {'symbols': [], 'user_mentions': [], 'trends': [], 'urls': [], 'hashtags': []}
+user {'screen_name': 'snoow3333', 'profile_link_color': '0084B4', 'statuses_count': 133539, 'description': 'عشت مدلُلُةّ ۆلاأشبہ أحٍد فقط لاأنني أبْنْتٌہ ربط إسمي ب #شخصيه_دبلوماسية..........وينِ بكون أنا بًأحًلَآمًکْ طبعآツ', 'profile_background_image_url': 'http://abs.twimg.com/images/themes/theme1/bg.png', 'profile_use_background_image': True, 'is_translator': False, 'name': 'شخصيه دبلوِماسيّة.!ّ', 'profile_sidebar_fill_color': 'DDEEF6', 'time_zone': 'Nairobi', 'profile_text_color': '333333', 'following': None, 'profile_sidebar_border_color': 'FFFFFF', 'profile_banner_url': 'https://pbs.twimg.com/profile_banners/1305908600/1433459409', 'notifications': None, 'url': None, 'verified': False, 'listed_count': 25, 'profile_image_url_https': 'https://pbs.twimg.com/profile_images/615338552402948097/k0eOXDro_normal.jpg', 'default_profile_image': False, 'friends_count': 7559, 'contributors_enabled': False, 'profile_background_tile': True, 'location': '', 'created_at': 'Tue Mar 26 23:22:14 +0000 2013', 'profile_background_image_url_https': 'https://abs.twimg.com/images/themes/theme1/bg.png', 'utc_offset': 10800, 'favourites_count': 14468, 'profile_image_url': 'http://pbs.twimg.com/profile_images/615338552402948097/k0eOXDro_normal.jpg', 'lang': 'ar', 'follow_request_sent': None, 'followers_count': 18816, 'profile_background_color': 'C0DEED', 'id_str': '1305908600', 'default_profile': False, 'protected': False, 'geo_enabled': False, 'id': 1305908600}
+place None
+retweet_count 0
+contributors None
+id 633030779619012608
+
+Tuning lambda expression over and over again: (moreover, used filter()) 惨不忍睹
+In [30]: print(re.split(r'\W+', '章選択は、「110」と入力すると、聖書の内容が見られます。'))
+['章選択は', '110', 'と入力すると', '聖書の内容が見られます', '']
+
+In [31]: print(re.split(r'\w+', '章選択は、「110」と入力すると、聖書の内容が見られます。'))
+['', '、「', '」', '、', '。']
+
+In [32]: print(re.split(r'w+', '章選択は、「110」と入力すると、聖書の内容が見られます。'))
+['章選択は、「110」と入力すると、聖書の内容が見られます。']
+
+In [33]: print(re.split(r'\w+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['', ' @', ': ¿', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '? ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' #', ' ', ' ', '…']
+
+In [34]: print(re.split(r'\W+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', 'jdssmile', 'quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', 'MTVHottest', 'Justin', 'Bi', '']
+
+In [35]: print(re.split(r'(\@\w+)|(\W+)', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', None, ' @', 'jdssmile', None, ': ¿', 'quien', None, ' ', 'tiene', None, ' ', 'Future', None, ' ', 'en', None, ' ', 'el', None, ' ', 'celular', None, ' ', 'y', None, ' ', 'me', None, ' ', 'la', None, ' ', 'pueda', None, ' ', 'enviar', None, ' ', 'por', None, ' ', 'wsp', None, '? ', 'No', None, ' ', 'me', None, ' ', 'deja', None, ' ', 'descargar', None, ' ', 'y', None, ' ', 'me', None, ' ', 'desespero', None, ' ', 'ahr', None, ' #', 'MTVHottest', None, ' ', 'Justin', None, ' ', 'Bi', None, '…', '']
+
+In [36]: print(re.split(r'(\@\w+)', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT ', '@jdssmile', ': ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [37]: print(re.split(r'\W+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', 'jdssmile', 'quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', 'MTVHottest', 'Justin', 'Bi', '']
+
+In [38]: print(re.split(r'\W+', '章選択は、「110」と入力すると、聖書の内容が見られます。'))['章選択は', '110', 'と入力すると', '聖書の内容が見られます', '']
+
+In [41]: print(re.search(r'\w+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+RT
+
+In [42]: print(re.search(r'\w+ ', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+RT 
+
+In [43]: print(re.search(r'\W+ ', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+: 
+
+In [44]: print(re.search(r'[a-zA-Z]+ ', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+RT 
+
+In [45]: print(re.search(r'([a-zA-Z]+)', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+RT
+
+In [46]: print(re.search(r'( [a-zA-Z]+ )', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+ tiene 
+
+In [47]: print(re.search(r'( [a-zA-Z]+ )', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').group())
+ tiene 
+
+In [48]: print(re.search(r'( [a-zA-Z]+ )', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').groups())
+(' tiene ',)
+
+In [49]: print(re.search(r'([a-zA-Z]+)', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').groups())
+('RT',)
+
+In [50]: print(re.match(r'([a-zA-Z]+)', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…').groups())
+('RT',)
+
+In [51]: print(re.split(r'(\@\w+)', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT ', '@jdssmile', ': ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [52]: print(re.split(r'\W+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', 'jdssmile', 'quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', 'MTVHottest', 'Justin', 'Bi', '']
+
+In [53]: print(re.split(r'\@w+|\W+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', 'jdssmile', 'quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', 'MTVHottest', 'Justin', 'Bi', '']
+
+In [54]: print(re.split(r'\@w+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [55]: print(re.split(r'\@w+:', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [56]: print(re.split(r'@w+:', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [57]: print(re.split(r' \@w+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [58]: print(re.split(r' #w+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [59]: print(re.split(r'#w+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [60]: re.match(r'#w+', '#MTVHottest')
+
+
+In [73]: print(re.split(r'\@[a-zA-Z]+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT ', ': ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…']
+
+In [74]: print(re.split(r'\@[a-zA-Z]+|#[a-zA-Z]+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT ', ': ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr ', ' Justin Bi…']
+
+In [75]: print(re.split(r'\@[a-zA-Z]+|#[a-zA-Z]+|\s', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', '', ':', '¿quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp?', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', '', '', 'Justin', 'Bi…']
+
+In [76]: print(re.split(r'\@[a-zA-Z]+|#[a-zA-Z]+|\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', '', ':', '¿quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp?', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', '', '', 'Justin', 'Bi…']
+
+In [77]: print(re.split(r'\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', '', ':', '¿quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp?', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', '', '', 'Justin', 'Bi…']
+
+In [78]: print(re.split(r'\@[a-zfor line in all_tweets[:100]:A-Z]+|#[a-zA-Z]+|\s*', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', '@jdssmile:', '¿quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp?', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', 'ahr', '', '', 'Justin', 'Bi…']
+In [81]: print(re.split(r'\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))
+['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', 'http://t.co/ceD9aTiFfI']
+
+In [82]: print(re.split(r'http://[a-zA-Z]+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))
+['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', '', '.co/ceD9aTiFfI']
+
+In [83]: print(re.split(r'\<http://[a-zA-Z]+\>|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))
+['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', 'http://t.co/ceD9aTiFfI']
+
+In [84]: print(re.split(r'http://[a-zA-Z]+/[a-zA-Z]+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))
+['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', 'http://t.co/ceD9aTiFfI']
+
+In [85]: print(re.split(r'http://[a-zA-Z]+/\w+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))
+['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', 'http://t.co/ceD9aTiFfI']
+
+In [86]: print(re.split(r'http://.+/.+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', '', '']
+
+In [87]: print(re.split(r'\@.+|#.+|\s*', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ahr #MTVHottest Justin Bi…'))
+['RT', '', '']
+
+In [88]: print(re.split(r'http://.+/.+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI'))['فَـقٌـدْ', 'رِحلت', 'لأٌنـَي', 'ْ', 'اَشٌـبَـعـتك', 'ٌ', 'حبآ', 'حـتى', 'أكتفيت.', '..', '', '']
+
+In [89]: print(re.split(r'http://.+/.+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'تستحم و يصورها و هي خجلانا جديددددد + الصور &lt;&lt; فلم سكس عرب نار &gt;&gt;http://t.co/sx6PIWgtJw اضغط على الاعلان لمشاهدة الفيلم'))
+['تستحم', 'و', 'يصورها', 'و', 'هي', 'خجلانا', 'جديددددد', '+', 'الصور', '&lt;&lt;', 'فلم', 'سكس', 'عرب', 'نار', '&gt;&gt;', '']
+
+In [90]: print(re.split(r'http://.+/.+ |\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'تستحم و يصورها و هي خجلانا جديددددد + الصور &lt;&lt; فلم سكس عرب نار &gt;&gt;http://t.co/sx6PIWgtJw اضغط على الاعلان لمشاهدة الفيلم'))
+['تستحم', 'و', 'يصورها', 'و', 'هي', 'خجلانا', 'جديددددد', '+', 'الصور', '&lt;&lt;', 'فلم', 'سكس', 'عرب', 'نار', '&gt;&gt;', 'الفيلم']
+
+In [91]: print(re.split(r'http://\w\.\w/\w|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'تستحم و يصورها و هي خجلانا جديددددد + الصور &lt;&lt; فلم سكس عرب نار &gt;&gt;http://t.co/sx6PIWgtJw اضغط على الاعلان لمشاهدة الفيلم'))
+['تستحم', 'و', 'يصورها', 'و', 'هي', 'خجلانا', 'جديددددد', '+', 'الصور', '&lt;&lt;', 'فلم', 'سكس', 'عرب', 'نار', '&gt;&gt;http://t.co/sx6PIWgtJw', 'اضغط', 'على', 'الاعلان', 'لمشاهدة', 'الفيلم']
+
+In [92]: print(re.split(r'http://\w\.\w/\w|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'تستحم و يصورها و هي خجلانا جديددددد + الصور &lt;&lt; فلم سكس عرب نار &gt;&gt;http://t.co/sx6PIWgtJw اضغط على الاعلان لمشاهدة الفيلم'))
+['تستحم', 'و', 'يصورها', 'و', 'هي', 'خجلانا', 'جديددددد', '+', 'الصور', '&lt;&lt;', 'فلم', 'سكس', 'عرب', 'نار', '&gt;&gt;http://t.co/sx6PIWgtJw', 'اضغط', 'على', 'الاعلان', 'لمشاهدة', 'الفيلم']
+
+In [93]: print(re.split(r'http://t\.co/[a-zA-Z0-9]+|\@[a-zA-Z]+|#[a-zA-Z]+|\s*', 'تستحم و يصورها و هي خجلانا جديددددد + الصور &lt;&lt; فلم سكس عرب نار &gt;&gt;http://t.co/sx6PIWgtJw اضغط على الاعلان لمشاهدة الفيلم'))
+['تستحم', 'و', 'يصورها', 'و', 'هي', 'خجلانا', 'جديددددد', '+', 'الصور', '&lt;&lt;', 'فلم', 'سكس', 'عرب', 'نار', '&gt;&gt;', '', 'اضغط', 'على', 'الاعلان', 'لمشاهدة', 'الفيلم']
+
+In [94]: print(re.split(r'[\@#&][a-zA-Z]+\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero &lt ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ', 'ahr ', 'Justin Bi…']
+
+In [95]: print(re.split(r'[\@#\&][a-zA-Z]+\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero &lt ahr #MTVHottest Justin Bi…'))
+['RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero ', 'ahr ', 'Justin Bi…']
+
+In [96]: print(re.split(r'[\@#&][a-zA-Z]+|\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero &lt ahr #MTVHottest Justin Bi…'))
+['RT', '', ':', '¿quien', 'tiene', 'Future', 'en', 'el', 'celular', 'y', 'me', 'la', 'pueda', 'enviar', 'por', 'wsp?', 'No', 'me', 'deja', 'descargar', 'y', 'me', 'desespero', '', '', 'ahr', '', '', 'Justin', 'Bi…']
+
+In [97]: print(filter(None, re.split(r'[\@#&][a-zA-Z]+|\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero &lt ahr #MTVHottest Justin Bi…')))
+<filter object at 0x7fd0396f8128>
+
+In [98]: filter(None, re.split(r'[\@#&][a-zA-Z]+|\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero &lt ahr #MTVHottest Justin Bi…'))
+Out[98]: <filter at 0x7fd0396f80f0>
+
+In [99]: list(filter(None, re.split(r'[\@#&][a-zA-Z]+|\s+', 'RT @jdssmile: ¿quien tiene Future en el celular y me la pueda enviar por wsp? No me deja descargar y me desespero &lt ahr #MTVHottest Justin Bi…')))
+Out[99]: 
+['RT',
+ ':',
+ '¿quien',
+ 'tiene',
+ 'Future',
+ 'en',
+ 'el',
+ 'celular',
+ 'y',
+ 'me',
+ 'la',
+ 'pueda',
+ 'enviar',
+ 'por',
+ 'wsp?',
+ 'No',
+ 'me',
+ 'deja',
+ 'descargar',
+ 'y',
+ 'me',
+ 'desespero',
+ 'ahr',
+ 'Justin',
+ 'Bi…']
+
+First 50 tweets in three-minutes-tweets.json:
+ايه الأكل 😜
+RT @nitishuna: @LasVegasChicas @I_luv_reds @DimondLadies @SiliconEros @herby2121 @hughcox69 @VxExx @Swt_Red @tthumb9090 @raggdoll_98 http:/…
+إنّ العرب إذا تغلبوا على أوطان أسرع إليها الخراب والسبب في ذلك أنها أمة وحشية بإستحكام عوائد التوحش وأسبابه فصار لهم خلقة وجبلة
+
+- ابن خلدون
+RT @moonmona7: لن الومك على رِحيلك ...
+فَـقٌـدْ رِحلت  لأٌنـَي ْ اَشٌـبَـعـتك ٌ حبآ حـتى  أكتفيت. .. http://t.co/ceD9aTiFfI
+@16_Pirates any shots?
+RT @Cancer_gk: A #Cancer may act shy and quiet, but will adamantly defend a loved one against outsiders.
+@1voodoochild thanks for the follow💯
+"shitting on otherkin is ablist and transphobic as fuck" ????
+112 #MTVHottest Britney Spears
+RT @Gggb769Gggb: هناك ضربه موجه  ستكون في عمق الخليج. 
+ستغير مجريات  الاحداث 
+ماعليكم سوا الصبر والانتصار. والايام بيننا لمن ستكون الغلبه. …
+RT @BestofPisces: #Pisces won't always call you out on your bullshit, but trust me, they DO see it.
+これ、これ！！！
+まじで50万楽勝だったwww
+　　【http://t.co/Q6oJ3LxKKO】
+@tenu_san 実習です寝れません…
+RT @TanBiitches: PREACH http://t.co/08TTjh7G01
+Boooa noiiiite,
+
+Converso com Deus porque sei que Ele se importa. 󾌧󾍇󾌵
+amk filmi beynimin içine etti ya düşünemiyorum şu an....
+RT @PerfectBaits: http://t.co/9Y8VAB9Gbq
+RT @quotes4writers: Elie Wiesel: Words can sometimes, in moments of grace, attain the quality of deeds. | #writingtips #writing #amwriting
+RT @marcusbrando: Tô carente de money
+ふぅ。ねみ
+تستحم و يصورها و هي خجلانا جديددددد + الصور &lt;&lt; فلم سكس عرب نار &gt;&gt;http://t.co/sx6PIWgtJw اضغط على الاعلان لمشاهدة الفيلم
+RT @ana_auryneer: Voy a subir 15 fotos de David (2)
+Recuerda: cada rt un voto
+
+#VideoVeranoMTV auryn http://t.co/uPrYaZESw4
+RT @AcostaCelu: Ella me stalkea ♡ 
+
+Te amo rubea @aldii_leiva
+самый любимый вайн с лм, где они говорят: лав ю.
+я прям чувствую, что мои девочки говорят это мне
+@ShivamDRao are you dumb blud.... You have missed more games than me and you are missing the most crucial bit
+RT @PolloVignolo: Coincido plenamente señor gambeta  https://t.co/yuDxGFeCma
+ربي ارحمهما كما ربياني صغيرا
+http://t.co/lLjXz7VPln
+Naging malake ung uniform ko dahil sa buhol ko 😂😂
+
+RT @oihanamarre: PTDDDDDDDDR LE PAUVRE http://t.co/HUvnDpgggb
+RT @imamoglu53: Şerefsiz,alçaklar!
+
+#SavaşYokTemizlikYapıyoruz http://t.co/EWD2NBEqJT
+#nature 🌲🌳 http://t.co/tpHHZnwc7L
+Et qui arrive dans la soirée? Jessy matador @JessyHereil
+@Emanshow14 u have to cuff if you want to keep Netflix and chilling
+Kısa şortla namusunu, taktığın küpeyle erkekliğini ölçen bir millet olduğumuzdan bizden bir bok olmaz.Açık ve net..
+112 #MTVHottest Britney Spears
+
+貴様のことを考える精気もとい性器がみなぎってくるぞぉ！セイバーに抱きつくキモい英雄王ｗｗｗわれもはじめては貴様に捧げるぞ♡いやわたし処女じゃないんだけど…かわいそうだから黙っておく… http://t.co/kyAfZfje9M http://t.co/KcLcS3TFZ7
+@GalatasaraySK @Fenerbahce @ultrAslan @AliSamiYenSokak @12numaraorg http://t.co/0lJeTT62SC
+
+
+
+
+
+
+RT @Juaninosente: @GabrielAlcas feliz cumpleaños a ti que tengas un dia ignolvidable mis mejores deseos
+RT @CloydRivers: I’m afraid of a world full of people who were given a trophy just for participatin’. James Harrison is the GOAT. http://t.…
+RT @norobu: 久方ぶりのナナナ氏から〜の。。。 http://t.co/Nix3bXffn1
+bahasa Suomi adalah bahasa yang sulit, ia adalah bahasa tersulit kedua setelah bahasa Magyar (Hungaria).
+
