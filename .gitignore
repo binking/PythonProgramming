@@ -4,3 +4,6 @@
 # Temp files
 *.*~
 *~
+
+# directory
+*/__pycache__
